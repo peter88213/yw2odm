@@ -13,7 +13,7 @@ from pywriter.converter.yw_cnv_ui import YwCnvUi
 from pywriter.ui.ui_tk import UiTk
 from pywriter.ui.ui import Ui
 from pywriter.yw.yw7_file import Yw7File
-from pywodm.odm_file import OdmFile
+from pywodm.odm_chapters import OdmChapters
 
 
 class Exporter(YwCnvUi):
@@ -22,7 +22,7 @@ class Exporter(YwCnvUi):
     Show 'Open' button after conversion from yw.
     """
     EXPORT_SOURCE_CLASSES = [Yw7File]
-    EXPORT_TARGET_CLASSES = [OdmFile]
+    EXPORT_TARGET_CLASSES = [OdmChapters]
 
     def export_from_yw(self, sourceFile, targetFile):
         """Extend the super class method, showing an 'open' button after conversion."""
@@ -32,7 +32,8 @@ class Exporter(YwCnvUi):
             self.ui.show_open_button(self.open_newFile)
 
 
-def run(sourcePath, suffix=''):
+def run(sourcePath, silentMode=True):
+    suffix = ''
     converter = Exporter()
 
     if silentMode:

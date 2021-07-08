@@ -17,7 +17,7 @@
 
 ## Download and install
 
-[Download the latest release (version 0.1.0)](https://raw.githubusercontent.com/peter88213/yw2odm/master/dist/yw2odm_v0.1.0.zip)
+[Download the latest release (version 0.2.0)](https://raw.githubusercontent.com/peter88213/yw2odm/master/dist/yw2odm_v0.2.0.zip)
 
 [Instructions for installation and use](usage)
 
