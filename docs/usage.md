@@ -25,5 +25,5 @@ The path of the yWriter project file.
 
 #### optional arguments:
 
-`--silent`  suppress error messages and the request to confirm overwriting or using defaults
+`--silent`  suppress error messages and the request to confirm overwriting
 

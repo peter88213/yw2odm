@@ -3,13 +3,10 @@
 
 ## Features (a Python 3 installation is required)
 
--   Generate a "standard manuscript" formatted ODM master document from an yWriter 7 project, plus an **ODF text document
-    (ODT)** for each chapter.
+-   Generate a "standard manuscript" formatted **ODM master document** from an yWriter 7 project, 
+    plus **ODT sub documents** for each chapter.
 
-
-With the [pywoo extension for OpenOffice](https://peter88213.github.io/pywoo) and the [yw-cnv extension for LibreOffice](https://peter88213.github.io/yw-cnv), you can write your edited Office documents back to the yWriter project.
-
-    
+ 
 ## Requirements
 
 - Windows.

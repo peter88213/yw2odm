@@ -22,8 +22,8 @@
 		
 		<mkdir dir="${dist}" />
 		<mkdir dir="${dist}/yw2odm_v${release}" />
-		<copy file="${builddir}/yw2odm.py" todir="${dist}/yw2odm_v${release}" />
-		<replace encoding="utf-8" file="${dist}/yw2odm_v${release}/yw2odm.py" token="@release" value="${release}" />
+		<copy file="${builddir}/yw2odm.pyw" todir="${dist}/yw2odm_v${release}" />
+		<replace encoding="utf-8" file="${dist}/yw2odm_v${release}/yw2odm.pyw" token="@release" value="${release}" />
 		<copy file="../LICENSE" todir="${dist}/yw2odm_v${release}" />
 		<copy file="${docs}/usage.md" tofile="${dist}/yw2odm_v${release}/README.md" />
 
