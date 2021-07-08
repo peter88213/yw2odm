@@ -1,6 +1,6 @@
 """Convert yWriter project to odm/odt. 
 
-Version 0.2.0
+Version 0.2.1
 
 Copyright (c) 2021 Peter Triesberger
 For further information see https://github.com/peter88213/yw2odm
@@ -4999,7 +4999,7 @@ class OdmChapters(OdmFile):
             for scId in self.chapters[chId].srtScenes:
                 subDocument.scenes[scId] = self.scenes[scId]
 
-            print(subDocument.write())
+            subDocument.write()
 
         return OdmFile.get_chapters(self)
 
@@ -5016,8 +5016,12 @@ class Exporter(YwCnvUi):
         """Extend the super class method, showing an 'open' button after conversion."""
         YwCnvUi.export_from_yw(self, sourceFile, targetFile)
 
-        if self.newFile:
-            self.ui.show_open_button(self.open_newFile)
+        try:
+            if self.newFile:
+                self.ui.show_open_button(self.open_newFile)
+
+        except AttributeError:
+            pass
 
 
 def run(sourcePath, silentMode=True):
@@ -5025,10 +5029,10 @@ def run(sourcePath, silentMode=True):
     converter = Exporter()
 
     if silentMode:
-        converter.ui = Ui('yWriter export to odm/odt documents 0.2.0')
+        converter.ui = Ui('yWriter export to odm/odt documents 0.2.1')
 
     else:
-        converter.ui = UiTk('yWriter export to odm/odt documents 0.2.0')
+        converter.ui = UiTk('yWriter export to odm/odt documents 0.2.1')
 
     kwargs = {'suffix': suffix}
     converter.run(sourcePath, **kwargs)

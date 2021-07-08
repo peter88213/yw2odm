@@ -52,6 +52,6 @@ class OdmChapters(OdmFile):
             for scId in self.chapters[chId].srtScenes:
                 subDocument.scenes[scId] = self.scenes[scId]
 
-            print(subDocument.write())
+            subDocument.write()
 
         return OdmFile.get_chapters(self)

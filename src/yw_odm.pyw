@@ -28,8 +28,12 @@ class Exporter(YwCnvUi):
         """Extend the super class method, showing an 'open' button after conversion."""
         YwCnvUi.export_from_yw(self, sourceFile, targetFile)
 
-        if self.newFile:
-            self.ui.show_open_button(self.open_newFile)
+        try:
+            if self.newFile:
+                self.ui.show_open_button(self.open_newFile)
+
+        except AttributeError:
+            pass
 
 
 def run(sourcePath, silentMode=True):
