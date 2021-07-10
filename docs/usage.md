@@ -6,14 +6,16 @@ The yw2odm Python script creates an ODM master document plus runs through all ch
 
 ## Instructions for use
 
-It is recommended to create a link on the desktop.
+### Intended usage
 
-You can either
+The included installation script creates a shortcut on the desktop. You can launch the program by dragging a yWriter project file and dropping it on the shortcut icon. 
 
-- launch the program by dragging a yWriter project file and dropping it on the program/link icon, or
+### Command line usage
+
+Alternatively, you can
+
 - launch the program on the command line passing the yWriter project file as an argument, or
 - launch the program via a batch file.
-
 
 usage: `yw2odm.pyw [--silent] Sourcefile`
 
@@ -59,3 +61,10 @@ The path of the yWriter project file.
     continuous paragraphs.
 -   Chapter titles and chapter descriptions can be found in the sub document's
     file properties.
+
+## Installation path
+
+The **install.bat** installation script installs *yw2xtg.pyw* in the user profile. This is the installation path: 
+
+`c:\Users\<user name>\AppData\Roaming\PyWriter\yw2odm`
+    

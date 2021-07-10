@@ -1,6 +1,6 @@
 """Convert yWriter project to odm/odt. 
 
-Version 0.2.1
+Version 0.2.2
 
 Copyright (c) 2021 Peter Triesberger
 For further information see https://github.com/peter88213/yw2odm
@@ -5029,10 +5029,10 @@ def run(sourcePath, silentMode=True):
     converter = Exporter()
 
     if silentMode:
-        converter.ui = Ui('yWriter export to odm/odt documents 0.2.1')
+        converter.ui = Ui('yWriter export to odm/odt documents 0.2.2')
 
     else:
-        converter.ui = UiTk('yWriter export to odm/odt documents 0.2.1')
+        converter.ui = UiTk('yWriter export to odm/odt documents 0.2.2')
 
     kwargs = {'suffix': suffix}
     converter.run(sourcePath, **kwargs)

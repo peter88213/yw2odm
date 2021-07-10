@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="yw2odm" basedir=".">
-	<property name="release" value="0.2.1" />
+	<property name="release" value="0.2.2" />
 	<property name="src" location="../src" />
 	<property name="builddir" location="../build" />
 	<property name="dist" location="../dist" />
@@ -21,13 +21,16 @@
 	<target name="dist" description="generate the distribution">
 		
 		<mkdir dir="${dist}" />
-		<mkdir dir="${dist}/yw2odm_v${release}" />
-		<copy file="${builddir}/yw2odm.pyw" todir="${dist}/yw2odm_v${release}" />
-		<replace encoding="utf-8" file="${dist}/yw2odm_v${release}/yw2odm.pyw" token="@release" value="${release}" />
-		<copy file="../LICENSE" todir="${dist}/yw2odm_v${release}" />
-		<copy file="${docs}/usage.md" tofile="${dist}/yw2odm_v${release}/README.md" />
+		<mkdir dir="${dist}/${project-name}_v${release}" />
 
-		<zip destfile="${dist}/yw2odm_v${release}.zip" basedir="${dist}/yw2odm_v${release}" />
+		<copy file="./install.bat" todir="${dist}/${release-name}" />
+
+		<copy file="${builddir}/yw2odm.pyw" todir="${dist}/${project-name}_v${release}" />
+		<replace encoding="utf-8" file="${dist}/${project-name}_v${release}/yw2odm.pyw" token="@release" value="${release}" />
+		<copy file="../LICENSE" todir="${dist}/${project-name}_v${release}" />
+		<copy file="${docs}/usage.md" tofile="${dist}/${project-name}_v${release}/README.md" />
+
+		<zip destfile="${dist}/${project-name}_v${release}.zip" basedir="${dist}/${project-name}_v${release}" />
 
 		<copy file="${docs}/template/index.md" overwrite="True" todir="${docs}" />
 		<replace encoding="utf-8" file="${docs}/index.md" token="0.99.0" value="${release}" />
