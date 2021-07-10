@@ -64,7 +64,7 @@ The path of the yWriter project file.
 
 ## Installation path
 
-The **install.bat** installation script installs *yw2xtg.pyw* in the user profile. This is the installation path: 
+The **install.bat** installation script installs *yw2odm.pyw* in the user profile. This is the installation path: 
 
 `c:\Users\<user name>\AppData\Roaming\PyWriter\yw2odm`
     
