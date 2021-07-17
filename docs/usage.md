@@ -2,7 +2,7 @@
 
 ------------------------------------------------------------------
 
-The yw2odm Python script creates an ODM master document plus runs through all chapters and scenes of a yWriter 7 project and fills XTG templates.
+The yw2odm Python script creates an ODM master document plus one ODT sub document per chapter.
 
 ## Instructions for use
 
