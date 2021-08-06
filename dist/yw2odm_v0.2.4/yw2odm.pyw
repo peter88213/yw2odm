@@ -1,6 +1,6 @@
 """Convert yWriter project to odm/odt. 
 
-Version 0.2.3
+Version 0.2.4
 
 Copyright (c) 2021 Peter Triesberger
 For further information see https://github.com/peter88213/yw2odm
@@ -614,6 +614,7 @@ class UiTk(Ui):
 
 
 from urllib.parse import quote
+from shutil import copy2
 
 
 class Novel():
@@ -821,6 +822,37 @@ class Novel():
         """
         if os.path.isfile(self.filePath):
             return True
+
+        else:
+            return False
+
+    def back_up(self, single=True):
+        """Create a backup file from filePath. Return True, if successful.
+        Otherwise, return False.
+
+        Parameter: single
+        True - Overwrite existing backup file. Extension = .bak
+        False - Create a new, numbered backup file. Extension = .bkxxxx
+        """
+        if os.path.isfile(self.filePath):
+
+            if single:
+                backupFile = self.filePath + '.bak'
+
+            else:
+                i = 0
+                backupFile = self.filePath + '.bk0000'
+
+                while os.path.isfile(backupFile):
+                    i += 1
+                    backupFile = self.filePath + '.bk' + str(i).zfill(4)
+
+            try:
+                copy2(self.filePath, backupFile)
+                return True
+
+            except:
+                return False
 
         else:
             return False
@@ -5042,10 +5074,10 @@ def run(sourcePath, silentMode=True):
     converter = Exporter()
 
     if silentMode:
-        converter.ui = Ui('yWriter export to odm/odt documents 0.2.3')
+        converter.ui = Ui('yWriter export to odm/odt documents 0.2.4')
 
     else:
-        converter.ui = UiTk('yWriter export to odm/odt documents 0.2.3')
+        converter.ui = UiTk('yWriter export to odm/odt documents 0.2.4')
 
     kwargs = {'suffix': suffix}
     converter.run(sourcePath, **kwargs)
