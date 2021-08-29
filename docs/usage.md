@@ -8,7 +8,7 @@ The yw2odm Python script creates an ODM master document plus one ODT sub documen
 
 ### Intended usage
 
-The included installation script creates a shortcut on the desktop. You can launch the program by dragging a yWriter project file and dropping it on the shortcut icon. 
+The included installation script prompts you to create a shortcut on the desktop. You can launch the program by dragging a yWriter project file and dropping it on the shortcut icon. 
 
 ### Command line usage
 
