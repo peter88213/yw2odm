@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### v0.2.6 Bugfix release
+
+Avoid an exception in case the source file doesn't exist.
+
+Based on PyWriter v3.18.0
+
 ### v0.2.5 Bugfix release
 
 This release is strongly recommended.

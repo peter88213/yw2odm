@@ -6,42 +6,19 @@ Copyright (c) 2021 Peter Triesberger
 For further information see https://github.com/peter88213/yw2odm
 Published under the MIT License (https://opensource.org/licenses/mit-license.php)
 """
-import os
 import argparse
 
-from pywriter.converter.yw_cnv_ui import YwCnvUi
 from pywriter.ui.ui_tk import UiTk
 from pywriter.ui.ui import Ui
-from pywriter.yw.yw7_file import Yw7File
-from pywodm.odm_chapters import OdmChapters
-
-
-class Exporter(YwCnvUi):
-    """A converter class for XPress tagged file export."
-    Extend the Super class. 
-    Show 'Open' button after conversion from yw.
-    """
-    EXPORT_SOURCE_CLASSES = [Yw7File]
-    EXPORT_TARGET_CLASSES = [OdmChapters]
-
-    def export_from_yw(self, sourceFile, targetFile):
-        """Extend the super class method, showing an 'open' button after conversion."""
-        YwCnvUi.export_from_yw(self, sourceFile, targetFile)
-
-        try:
-            if self.newFile:
-                self.ui.show_open_button(self.open_newFile)
-
-        except AttributeError:
-            pass
+from pywodm.odm_exporter import OdmExporter
 
 
 def run(sourcePath, silentMode=True):
     suffix = ''
-    converter = Exporter()
+    converter = OdmExporter()
 
     if silentMode:
-        converter.ui = Ui('yWriter export to odm/odt documents @release')
+        converter.ui = Ui('')
 
     else:
         converter.ui = UiTk('yWriter export to odm/odt documents @release')
@@ -62,17 +39,4 @@ if __name__ == '__main__':
                         action="store_true",
                         help='suppress error messages and the request to confirm overwriting')
     args = parser.parse_args()
-
-    if args.silent:
-        silentMode = True
-
-    else:
-        silentMode = False
-
-    if os.path.isfile(args.sourcePath):
-        sourcePath = args.sourcePath
-
-    else:
-        sourcePath = None
-
-    run(sourcePath, silentMode)
+    run(args.sourcePath, args.silent)
