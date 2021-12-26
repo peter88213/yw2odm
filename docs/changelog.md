@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### v0.2.7 Support non-Windows OS
+
+- Move installation to another location (see instructions for use).
+
+Based on PyWriter v3.28.1
+
 ### v0.2.6 Bugfix release
 
 Avoid an exception in case the source file doesn't exist.
