@@ -4,6 +4,14 @@
 
 ## Changelog
 
+### v 0.2.8 Make the installation OS independent.
+
+- Add a shebang to the script.
+- Use a Python installation script instead of a batch file.
+- Make the installed script executable under Linux.
+
+Based on PyWriter v3.28.1
+
 ### v0.2.7 Support non-Windows OS
 
 - Move installation to another location (see instructions for use).

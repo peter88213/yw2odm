@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="yw2odm" basedir=".">
-	<property name="release" value="0.2.7" />
+	<property name="release" value="0.2.8" />
 	<property name="src" location="../src" />
 	<property name="test" location="../test" />
 	<property name="build" location="../build" />
@@ -17,31 +17,32 @@
 			</exec>
 	</target>
 
-	<target name="dist" description="generate the distribution">
-		
+	<target name="dist" description="generate the distribution">		
 		<delete dir="${build}" />
 		<delete dir="${dist}" />
 		<mkdir dir="${build}" />
 		<mkdir dir="${dist}" />
-		<mkdir dir="${build}/${project-name}_v${release}" />
+		<mkdir dir="${build}/${release-name}" />
 
-		<copy file="./install.bat" todir="${build}/${release-name}" />
+		<copy file="${test}/yw2odm.pyw" todir="${build}/${release-name}" />
+		<replace encoding="utf-8" file="${build}/${release-name}/yw2odm.pyw" token="@release" value="${release}" />
 
-		<copy file="${test}/yw2odm.pyw" todir="${build}/${project-name}_v${release}" />
-		<replace encoding="utf-8" file="${build}/${project-name}_v${release}/yw2odm.pyw" token="@release" value="${release}" />
-		<copy file="../LICENSE" todir="${build}/${project-name}_v${release}" />
-		<copy file="${docs}/usage.md" tofile="${build}/${project-name}_v${release}/README.md" />
+		<copy file="${src}/setup.pyw" todir="${build}/${release-name}" />		
+		<replace encoding="utf-8" file="${build}/${release-name}/setup.pyw" token="@release" value="${release}" />
+		
+		<copy file="../LICENSE" todir="${build}/${release-name}" />
+		<copy file="${docs}/usage.md" tofile="${build}/${release-name}/README.md" />
 
-		<zip destfile="${dist}/${project-name}_v${release}.zip" basedir="${build}/${project-name}_v${release}" />
+		<fixcrlf encoding="utf-8" eol="lf" srcdir="${build}/${release-name}" includes="**/*.*" />
+
+		<zip destfile="${dist}/${release-name}.zip" basedir="${build}/${release-name}" />
 
 		<copy file="${docs}/template/index.md" overwrite="True" todir="${docs}" />
 		<replace encoding="utf-8" file="${docs}/index.md" token="0.99.0" value="${release}" />
 	</target>
 
 	<target name="clean" description="clean up">
-		
-		<delete file="${test}/yw2odm.pyw" />
-		
+		<delete file="${test}/yw2odm.pyw" />		
 	</target>
 
 	
