@@ -4,7 +4,7 @@
 
 ## Changelog
 
-### v 0.2.8 Make the installation OS independent.
+### v0.2.8 Make the installation OS independent.
 
 - Add a shebang to the script.
 - Use a Python installation script instead of a batch file.
