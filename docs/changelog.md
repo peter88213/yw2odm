@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### v0.2.9 Update text formatting
+
+When creating odt files, make paragraphs after blank lines "Text body" without indent.
+
+Based on PyWriter v3.32.2
+
 ### v0.2.8 Make the installation OS independent.
 
 - Add a shebang to the script.
