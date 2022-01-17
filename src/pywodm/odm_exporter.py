@@ -1,15 +1,15 @@
 """Provide an ODM/ODT exporter class for yWriter.
 
-Copyright (c) 2021 Peter Triesberger
+Copyright (c) 2022 Peter Triesberger
 For further information see https://github.com/peter88213/yw2odm
 Published under the MIT License (https://opensource.org/licenses/mit-license.php)
 """
-from pywriter.converter.yw_cnv_ui import YwCnvUi
+from pywriter.converter.yw_cnv_ff import YwCnvFf
 from pywriter.yw.yw7_file import Yw7File
 from pywodm.odm_chapters import OdmChapters
 
 
-class OdmExporter(YwCnvUi):
+class OdmExporter(YwCnvFf):
     """A converter class for ODM/ODT export."
     Extend the Super class. 
     Show 'Open' button after conversion from yw.
@@ -19,7 +19,7 @@ class OdmExporter(YwCnvUi):
 
     def export_from_yw(self, sourceFile, targetFile):
         """Extend the super class method, showing an 'open' button after conversion."""
-        YwCnvUi.export_from_yw(self, sourceFile, targetFile)
+        super().export_from_yw(sourceFile, targetFile)
 
         try:
             if self.newFile:

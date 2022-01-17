@@ -1,7 +1,6 @@
-"""Provide a class for ODM master document export
-with chapters as subdocuments.
+"""Provide a class for ODM master document export with chapters as subdocuments.
 
-Copyright (c) 2021 Peter Triesberger
+Copyright (c) 2022 Peter Triesberger
 For further information see https://github.com/peter88213/yw2odm
 Published under the MIT License (https://opensource.org/licenses/mit-license.php)
 """
@@ -54,4 +53,4 @@ class OdmChapters(OdmFile):
 
             subDocument.write()
 
-        return OdmFile.get_chapters(self)
+        return super.get_chapters()
