@@ -1,4 +1,4 @@
-"""Modules for yWriter to ODM/ODT export.
+"""Package for yWriter to ODM/ODT export.
 
 Modules:
 
