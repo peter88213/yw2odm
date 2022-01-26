@@ -53,4 +53,4 @@ class OdmChapters(OdmFile):
 
             subDocument.write()
 
-        return super.get_chapters()
+        return super().get_chapters()
