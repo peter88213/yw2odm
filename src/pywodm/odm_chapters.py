@@ -29,14 +29,14 @@ class OdmChapters(OdmFile):
             projectDir = '.'
 
         for chId in self.srtChapters:
-            subDocument = OdtExport(projectDir + '/ChID_' + chId + '.odt')
+            subDocument = OdtExport(f'{projectDir}/ChID_{chId}.odt')
 
-            subDocument.title = self.title + ' - ChID: ' + chId
+            subDocument.title = f'{self.title} - ChID: {chId}'
 
             subDocument.desc = self.chapters[chId].title
 
             if self.chapters[chId].desc:
-                subDocument.desc += ('\n' + self.chapters[chId].desc)
+                subDocument.desc += (f'\n{self.chapters[chId].desc}')
 
             subDocument.author = self.author
             subDocument.fileHeader = self.CONTENT_XML_HEADER

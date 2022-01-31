@@ -11,8 +11,8 @@ import inliner
 
 SRC = '../src/'
 BUILD = '../test/'
-SOURCE_FILE = SRC + 'yw2odm_.pyw'
-TARGET_FILE = BUILD + 'yw2odm.pyw'
+SOURCE_FILE = f'{SRC}yw2odm_.pyw'
+TARGET_FILE = f'{BUILD}yw2odm.pyw'
 
 
 def main():
