@@ -13,17 +13,17 @@ from pywriter.odt.odt_export import OdtExport
 class OdmChapters(OdmFile):
     """OpenDocument master document representation."""
 
-    chapterTemplate = '''<text:section text:style-name="Sect1" text:name="${Title}" text:protected="true">
+    _chapterTemplate = '''<text:section text:style-name="Sect1" text:name="${Title}" text:protected="true">
 <text:section-source xlink:href="../ChID_${ID}.odt"/>
 </text:section>
 '''
 
-    def get_chapters(self):
+    def _get_chapters(self):
         """Process the chapters and nested scenes.
         Return a list of strings.
         Extend the superclass method by generating subdocuments.
         """
-        projectDir = os.path.dirname(self.originalPath)
+        projectDir = os.path.dirname(self._originalPath)
 
         if projectDir == '':
             projectDir = '.'
@@ -39,7 +39,7 @@ class OdmChapters(OdmFile):
                 subDocument.desc += (f'\n{self.chapters[chId].desc}')
 
             subDocument.author = self.author
-            subDocument.fileHeader = self.CONTENT_XML_HEADER
+            subDocument._fileHeader = self._CONTENT_XML_HEADER
 
             subDocument.chapters[chId] = self.chapters[chId]
             subDocument.srtChapters = [chId]
@@ -53,4 +53,4 @@ class OdmChapters(OdmFile):
 
             subDocument.write()
 
-        return super().get_chapters()
+        return super()._get_chapters()

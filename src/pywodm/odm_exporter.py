@@ -23,7 +23,10 @@ class OdmExporter(YwCnvFf):
 
         try:
             if self.newFile:
-                self.ui.show_open_button(self.open_newFile)
+                self.ui._show_open_button(self._open_newFile)
 
         except AttributeError:
             pass
+
+
+
