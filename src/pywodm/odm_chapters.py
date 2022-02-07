@@ -25,7 +25,7 @@ class OdmChapters(OdmFile):
         """
         projectDir = os.path.dirname(self._originalPath)
 
-        if projectDir == '':
+        if not projectDir:
             projectDir = '.'
 
         for chId in self.srtChapters:
