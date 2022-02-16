@@ -38,7 +38,7 @@ class OdmChapters(OdmFile):
             if self.chapters[chId].desc:
                 subDocument.desc += (f'\n{self.chapters[chId].desc}')
 
-            subDocument.author = self.author
+            subDocument.authorName = self.authorName
             subDocument._fileHeader = self._CONTENT_XML_HEADER
 
             subDocument.chapters[chId] = self.chapters[chId]
