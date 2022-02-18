@@ -17,9 +17,9 @@ class OdmExporter(YwCnvFf):
     EXPORT_SOURCE_CLASSES = [Yw7File]
     EXPORT_TARGET_CLASSES = [OdmChapters]
 
-    def export_from_yw(self, sourceFile, targetFile):
+    def export_from_yw(self, source, target):
         """Extend the super class method, showing an 'open' button after conversion."""
-        super().export_from_yw(sourceFile, targetFile)
+        super().export_from_yw(source, target)
 
         try:
             if self.newFile:
