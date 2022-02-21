@@ -6,7 +6,7 @@ Published under the MIT License (https://opensource.org/licenses/mit-license.php
 """
 import os
 
-from pywodm.odm_file import OdmFile
+from yw2odmlib.odm_file import OdmFile
 from pywriter.odt.odt_export import OdtExport
 
 

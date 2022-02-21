@@ -18,7 +18,7 @@ TARGET_FILE = f'{BUILD}yw2odm.pyw'
 
 
 def main():
-    inliner.run(SOURCE_FILE, TARGET_FILE, 'pywodm', '../src/')
+    inliner.run(SOURCE_FILE, TARGET_FILE, 'yw2odmlib', '../src/')
     inliner.run(TARGET_FILE, TARGET_FILE, 'pywriter', '../../PyWriter/src/')
     print('Done.')
 

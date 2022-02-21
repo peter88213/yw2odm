@@ -11,7 +11,7 @@ import argparse
 
 from pywriter.ui.ui_tk import UiTk
 from pywriter.ui.ui import Ui
-from pywodm.odm_exporter import OdmExporter
+from yw2odmlib.odm_exporter import OdmExporter
 
 
 def run(sourcePath, silentMode=True):

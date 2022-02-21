@@ -6,7 +6,7 @@ Published under the MIT License (https://opensource.org/licenses/mit-license.php
 """
 from pywriter.converter.yw_cnv_ff import YwCnvFf
 from pywriter.yw.yw7_file import Yw7File
-from pywodm.odm_chapters import OdmChapters
+from yw2odmlib.odm_chapters import OdmChapters
 
 
 class OdmExporter(YwCnvFf):
