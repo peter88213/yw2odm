@@ -23,7 +23,7 @@ class OdmChapters(OdmFile):
         
         Create a subdocument for each chapter, containing the scenes.
         Return a list of strings for the master document.
-        Extend the superclass method.
+        Extends the superclass method.
         """
         projectDir = os.path.dirname(self._originalPath)
         if not projectDir:
