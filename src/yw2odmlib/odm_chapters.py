@@ -5,7 +5,6 @@ For further information see https://github.com/peter88213/yw2odm
 Published under the MIT License (https://opensource.org/licenses/mit-license.php)
 """
 import os
-
 from yw2odmlib.odm_file import OdmFile
 from pywriter.odt.odt_export import OdtExport
 
