@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### v1.0.3 Optional update
+
+PyWriter library update.
+
+Based on PyWriter v5.12.2
+
 ### v1.0.2 Optional update
 
 - Clean up ODF templates to make the code and generated documents more compact.

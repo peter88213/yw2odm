@@ -36,7 +36,7 @@ class OdmExporter(YwCnvFf):
         super().export_from_yw(source, target)
         try:
             if self.newFile:
-                self.ui._show_open_button(self._open_newFile)
+                self.ui.show_open_button(self._open_newFile)
         except AttributeError:
             pass
 
