@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### v1.0.4 Improved word counting
+
+- Fix word counting considering comments, hyphens, and dashes.
+
+Based on PyWriter v5.12.3
+
 ### v1.0.3 Optional update
 
 PyWriter library update.
