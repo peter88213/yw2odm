@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### v1.0.7 Update setup script
+
+- Change the working dir to the script dir on startup in order to avoid "file not found" error.
+
+Based on PyWriter v5.18.0
+
 ### v1.0.6 Improved setup
 
 - Catch exceptions in the setup script.
