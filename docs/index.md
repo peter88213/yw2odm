@@ -9,7 +9,7 @@
  
 ## Requirements
 
-- [Python 3.6+](https://www.python.org).  
+- [Python](https://www.python.org/) 3.6 =< version <= 3.10.
 - An [OpenOffice](http://www.openoffice.org/) or [LibreOffice](https://www.libreoffice.org/) installation.
 
 
