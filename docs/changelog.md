@@ -4,6 +4,16 @@
 
 ## Changelog
 
+### v1.0.9
+
+- Update the PyWriter library for future Python versions.
+- Count words like in LibreOffice. See: https://help.libreoffice.org/latest/en-GB/text/swriter/guide/words_count.html.
+- Use language markup for text passages when converting ODF and HTML.
+- When exporting to ODT, paragraphs that start with "> " are formatted as "Quotations".
+- Write non-system language and country codes when converting to ODF.
+
+Based on PyWriter v7.14.2
+
 ### v1.0.8 Optional release
 
 - Code refactoring and library update.

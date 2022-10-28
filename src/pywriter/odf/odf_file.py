@@ -92,12 +92,12 @@ class OdfFile(FileExport):
         except:
             return f'{ERROR}{_("Cannot write file")}: "manifest.xml"'
 
-        #--- Generate styles.xml with system language set as document language.
-        lng, ctr = locale.getlocale()[0].split('_')
+        #--- Generate styles.xml.
+        self.check_locale()
         localeMapping = dict(
-            Language=lng,
-            Country=ctr,
-        )
+            Language=self.languageCode,
+            Country=self.countryCode,
+            )
         template = Template(self._STYLES_XML)
         text = template.safe_substitute(localeMapping)
         try:
