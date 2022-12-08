@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Convert yWriter project to odm/odt. 
 
 Version @release
